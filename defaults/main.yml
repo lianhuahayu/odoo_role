@@ -6,7 +6,7 @@ ansible_user: ubuntu
 postgres_container: postgres_container
 postgres_image: postgres:latest
 postgres_port: 5432
-postgres_db: postgres
+postgres_database: postgres
 postgres_user: postgres
 postgres_password: postgres
 postgres_data: backup/postgres/db-data
