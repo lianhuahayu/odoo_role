@@ -1,6 +1,7 @@
-version: '3.1'
+version: '2'
 services:
   {{ odoo_container }}:
+    container_name: {{ odoo_container }}
     image: {{ odoo_image }}
     depends_on:
       - {{ postgres_container }}
@@ -13,7 +14,8 @@ services:
     networks:
       - {{ network_name }} 
   
-  {{ postgres_container }}:
+  {{ postgres_container }}: 
+    container_name: {{ postgres_container }}
     image: {{ postgres_image }}
     ports:
       - "{{ postgres_port }}:5432"
@@ -30,3 +32,7 @@ services:
 networks:
   {{ network_name }}: 
     driver: bridge
+
+volume:
+  {{ odoo_data }}:
+  {{ postgres_data }}:
