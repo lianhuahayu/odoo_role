@@ -3,8 +3,8 @@
 ansible_user: ubuntu
 
 #Postgres variables
-postgres_container: postgres_container
-postgres_image: postgres:latest
+postgres_container: postgres
+postgres_image: postgres:13
 postgres_port: 5432
 postgres_database: postgres
 postgres_user: postgres
@@ -13,6 +13,9 @@ postgres_data: /backup/postgres/db-data
 
 #Odoo variables
 odoo_container: odoo_container
-odoo_image: odoo:13
+odoo_image: odoo:13.0
 odoo_port: 8069
+
+#Nom du réseau
+network_name: odoo
 
