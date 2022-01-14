@@ -11,4 +11,7 @@
     - docker-compose.yml
     
 - name: "Relancer le container odoo apres l'init de la db"
-  command: "docker container restart {{ odoo_container }}"
+  shell: |
+    sleep 30
+    docker container restart {{ odoo_container }}
+    exit 0

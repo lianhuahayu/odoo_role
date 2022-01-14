@@ -29,7 +29,7 @@ services:
       - PORT={{ postgres_port }}
       - USER={{ postgres_user }}
       - PASSWORD={{ postgres_password }} 
-    command : odoo -i base -d {{ postgres_database }} --stop-after-init --db_host={{ postgres_container }} -r {{ postgres_user }} -w {{ postgres_password }} 
+    command: odoo -i base -d {{ postgres_database }} --stop-after-init --db_host={{ postgres_container }} -r {{ postgres_user }} -w {{ postgres_password }} 
     volumes:
       - {{ odoo_data }}:/var/lib/odoo
     networks:
