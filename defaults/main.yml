@@ -6,9 +6,9 @@ ansible_user: user
 postgres_container: backend_odoo
 postgres_image: postgres:13
 postgres_port: 5432
-postgres_database: odoo_db
-postgres_user: odoo_user
-postgres_password: odoo_password
+postgres_database: odoo
+postgres_user: odoo
+postgres_password: odoo
 postgres_data: backup-postgres-db-data
 
 #Odoo variables
