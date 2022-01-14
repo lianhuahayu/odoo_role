@@ -9,7 +9,7 @@ postgres_port: 5432
 postgres_database: postgres
 postgres_user: postgres
 postgres_password: postgres
-postgres_data: backup/postgres/db-data
+postgres_data: /backup/postgres/db-data
 
 #Odoo variables
 odoo_container: odoo_container
