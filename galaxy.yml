@@ -1,0 +1,18 @@
+---
+namespace: community
+name: odoo-role
+version: 1.0.0
+readme: README.md
+authors:
+  - Daniel JOSEPH
+description: Installation de postgres et odoo
+license_file: BSD
+tags:
+  - v1
+repository: https://github.com/lianhuahayu/odoo-role.git
+documentation: https://github.com/lianhuahayu/odoo-role.git
+homepage: https://github.com/lianhuahayu/odoo-role.git
+issues: https://github.com/lianhuahayu/odoo-role.git
+build_ignore:
+  - .gitignore
+ 

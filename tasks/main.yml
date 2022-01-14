@@ -1,0 +1,48 @@
+---
+# Installation de docker
+- name: "script docker"
+  package:
+    name: curl
+    state: present
+
+- name: "prequis docker"
+  command: 'curl -fsSL https://get.docker.com -o get-docker.sh'
+- name: "install docker"
+  command: 'sh get-docker.sh'
+
+- name: "ajout {{ ansible_user }} au groupe docker"
+  command: "usermod -aG docker {{ ansible_user }}"
+
+- name: "start and enabled docker"
+  service:
+    name: docker
+    enabled: yes
+    state: started
+
+# Lancement d'un conteneur Postgres
+- name : "Lancez un container Postgres"
+  docker_container:
+    name: "{{ postgres_container }}"
+    image: "{{ postgres_image }}"
+    ports:
+      - "{{ postgres_port }}:5432"
+    env:
+      POSTGRES_DB: "{{ postgres_databse }}"
+      POSTGRES_USER: "{{ postgres_user }}"
+      POSTGRES_PASSWORD: "{{ postgres_password }}"
+    volumes:
+      - "{{ postgres_data }}:/var/lib/postgresql/data"
+
+# Lancement d'un conteneur Odoo
+- name : "Lancez un container Odoo"
+  docker_container:
+    name: "{{ odoo_container }}"
+    image: "{{ odoo_image }}"
+    ports:
+      - "{{ odoo_port }}:8069"
+    env:
+      HOST: postgres_host
+      USER: "{{ postgres_user }}"
+      PASSWORD: "{{ postgres_password }}"
+    links:
+      - "{{ postgres_container }}: postgres_host"

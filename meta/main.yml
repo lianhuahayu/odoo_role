@@ -1,0 +1,6 @@
+---
+galaxy_info:
+  role_name: odoo_role
+  author: Daniel
+  description: Ansible odoo role
+  company: ICGROUP
