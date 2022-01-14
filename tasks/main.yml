@@ -7,7 +7,7 @@
     ports:
       - "{{ postgres_port }}:5432"
     env:
-      POSTGRES_DB: "{{ postgres_databse }}"
+      POSTGRES_DB: "{{ postgres_database }}"
       POSTGRES_USER: "{{ postgres_user }}"
       POSTGRES_PASSWORD: "{{ postgres_password }}"
     volumes:
