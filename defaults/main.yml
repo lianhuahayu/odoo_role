@@ -9,13 +9,13 @@ postgres_port: 5432
 postgres_database: odoo_db
 postgres_user: odoo_user
 postgres_password: odoo_password
-postgres_data: /backup/postgres/db-data
+postgres_data: backup-postgres-db-data
 
 #Odoo variables
 odoo_container: frontend_odoo
 odoo_image: odoo:13.0
 odoo_port: 8069
-odoo_data: /backup/odoo/data
+odoo_data: backup-odoo-data
 
 #Nom du réseau
 network_name: odoo

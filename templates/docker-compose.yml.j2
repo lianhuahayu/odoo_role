@@ -3,22 +3,25 @@ services:
   {{ odoo_container }}:
     container_name: {{ odoo_container }}
     image: {{ odoo_image }}
+    restart: always
     depends_on:
       - {{ postgres_container }}
     ports:
       - "{{ odoo_port }}:8069"
     environment:
       - HOST={{ postgres_container }}
+      - PORT={{ postgres_port }}
       - USER={{ postgres_user }}
       - PASSWORD={{ postgres_password }} 
     volumes:
       - {{ odoo_data }}:/var/lib/odoo
     networks:
       - {{ network_name }} 
-  
+
   {{ postgres_container }}: 
     container_name: {{ postgres_container }}
     image: {{ postgres_image }}
+    restart: always
     ports:
       - "{{ postgres_port }}:5432"
     environment:
