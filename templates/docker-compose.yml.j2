@@ -12,7 +12,7 @@ services:
       - USER={{ postgres_user }}
       - PASSWORD={{ postgres_password }} 
     volumes:
-	  - {{ odoo_data }}:/var/lib/odoo
+      - {{ odoo_data }}:/var/lib/odoo
     networks:
       - {{ network_name }} 
   
@@ -35,6 +35,6 @@ networks:
   {{ network_name }}: 
     driver: bridge
 
-volume:
+volumes:
   {{ odoo_data }}:
   {{ postgres_data }}:
