@@ -7,27 +7,26 @@ services:
     ports:
       - "{{ odoo_port }}:8069"
     environment:
-    - HOST={{ postgres_container }}
-    - USER={{ postgres_user }}
-    - PASSWORD={{ postgres_password }} 
-	networks:
-	  - {{ network_name }} 
-	  
+      - HOST={{ postgres_container }}
+      - USER={{ postgres_user }}
+      - PASSWORD={{ postgres_password }} 
+    networks:
+      - {{ network_name }} 
+  
   {{ postgres_container }}:
     image: {{ postgres_image }}
-	ports:
+    ports:
       - "{{ postgres_port }}:5432"
     environment:
       - POSTGRES_DB={{ postgres_database }}
       - POSTGRES_PASSWORD={{ postgres_password }}
       - POSTGRES_USER={{ postgres_user }}
       - PGDATA=/var/lib/postgresql/data/pgdata
-	volumes:
+    volumes:
       - {{ postgres_data }}:/var/lib/postgresql/data/pgdata
     networks:
       - {{ network_name }}
-	  
+
   networks:
-	{{ network_name }}:
-	  driver: bridge
-	
+    {{ network_name }}:
+      driver: bridge
