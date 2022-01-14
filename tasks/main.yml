@@ -9,3 +9,6 @@
     project_src: /home/{{ ansible_user }}
     files:
     - docker-compose.yml
+    
+- name: "Relancer le container odoo apres l'init de la db"
+  command: "docker container restart {{ odoo_container }}"
