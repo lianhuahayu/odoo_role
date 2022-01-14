@@ -11,7 +11,7 @@ services:
       - HOST={{ postgres_container }}
       - USER={{ postgres_user }}
       - PASSWORD={{ postgres_password }} 
-	volumes:
+    volumes:
 	  - {{ odoo_data }}:/var/lib/odoo
     networks:
       - {{ network_name }} 
