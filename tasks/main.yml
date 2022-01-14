@@ -12,6 +12,6 @@
     
 - name: "Relancer le container odoo apres l'init de la db"
   shell: |
-    sleep 30
+    sleep 15
     docker container restart {{ odoo_container }}
     exit 0
