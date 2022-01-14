@@ -1,5 +1,21 @@
 version: '2'
 services:
+  {{ postgres_container }}: 
+    container_name: {{ postgres_container }}
+    image: {{ postgres_image }}
+    restart: always
+    ports:
+      - "{{ postgres_port }}:5432"
+    environment:
+      - POSTGRES_DB={{ postgres_database }}
+      - POSTGRES_PASSWORD={{ postgres_password }}
+      - POSTGRES_USER={{ postgres_user }}
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - {{ postgres_data }}:/var/lib/postgresql/data/pgdata
+    networks:
+      - {{ network_name }}
+
   {{ odoo_container }}:
     container_name: {{ odoo_container }}
     image: {{ odoo_image }}
@@ -17,22 +33,6 @@ services:
       - {{ odoo_data }}:/var/lib/odoo
     networks:
       - {{ network_name }} 
-
-  {{ postgres_container }}: 
-    container_name: {{ postgres_container }}
-    image: {{ postgres_image }}
-    restart: always
-    ports:
-      - "{{ postgres_port }}:5432"
-    environment:
-      - POSTGRES_DB={{ postgres_database }}
-      - POSTGRES_PASSWORD={{ postgres_password }}
-      - POSTGRES_USER={{ postgres_user }}
-      - PGDATA=/var/lib/postgresql/data/pgdata
-    volumes:
-      - {{ postgres_data }}:/var/lib/postgresql/data/pgdata
-    networks:
-      - {{ network_name }}
 
 networks:
   {{ network_name }}: 

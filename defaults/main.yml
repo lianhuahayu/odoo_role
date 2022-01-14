@@ -4,7 +4,7 @@ ansible_user: user
 
 #Postgres variables
 postgres_container: backend_odoo
-postgres_image: postgres:13
+postgres_image: postgres:10
 postgres_port: 5432
 postgres_database: odoo
 postgres_user: odoo
