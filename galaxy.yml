@@ -9,10 +9,10 @@ description: Installation de postgres et odoo
 license_file: BSD
 tags:
   - v1
-repository: https://github.com/lianhuahayu/odoo-role.git
-documentation: https://github.com/lianhuahayu/odoo-role.git
-homepage: https://github.com/lianhuahayu/odoo-role.git
-issues: https://github.com/lianhuahayu/odoo-role.git
+repository: https://github.com/lianhuahayu/odoo_role.git
+documentation: https://github.com/lianhuahayu/odoo_role.git
+homepage: https://github.com/lianhuahayu/odoo_role.git
+issues: https://github.com/lianhuahayu/odoo_role.git
 build_ignore:
   - .gitignore
  
