@@ -1,5 +1,5 @@
 - hosts: localhost
- connection: local 
+  connection: local 
   become: yes
   roles:
     - lianhuahayu.docker_role
