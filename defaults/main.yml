@@ -1,6 +1,7 @@
 ---
 # Utilisateur par defaut
 ansible_user: user
+ansible_sudo_pass: user
 
 #Postgres variables
 postgres_container: backend_odoo

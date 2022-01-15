@@ -1,0 +1,5 @@
+- hosts: localhost
+  become: yes
+  roles:
+    - lianhuahayu.docker_role
+    - lianhuahayu.odoo_role
